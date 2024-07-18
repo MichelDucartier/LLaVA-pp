@@ -4,8 +4,10 @@ deepspeed llava/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path meta-llama/Meta-Llama-3-8B-Instruct \
     --version plain \
-    --data_path ./playground/data/LLaVA-Pretrain/blip_laion_cc_sbu_558k.json \
-    --image_folder ./playground/data/LLaVA-Pretrain/images \
+    # --data_path ./playground/data/LLaVA-Pretrain/blip_laion_cc_sbu_558k.json \
+    # --image_folder ./playground/data/LLaVA-Pretrain/images \
+    --data_path /mloscratch/homes/miczhang/multimodal-datasets/processed/pretraining/pretrain_dataset.json \
+    --image_folder /mloscratch/homes/miczhang/multimodal-datasets/processed/images \
     --vision_tower openai/clip-vit-large-patch14-336 \
     --mm_projector_type mlp2x_gelu \
     --tune_mm_mlp_adapter True \
